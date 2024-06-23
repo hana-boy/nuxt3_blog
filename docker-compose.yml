@@ -12,10 +12,5 @@ services:
       - "24678:24678"
     tty: true
     command: sh -c "npm run dev"
-  # golang:
-  #   container_name: golang
-  #   build: docker/golang
-  #   volumes:
-  #     - ./backend:/app:cached
 volumes:
   nuxt_node_modules:
