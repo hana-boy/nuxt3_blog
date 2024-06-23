@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  nuxt:
+    container_name: nuxt
+    build: docker/node
+    volumes:
+      - ./front:/app:cached
+      - nuxt_node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+      - "24678:24678"
+    tty: true
+    command: sh -c "npm run dev"
+  # golang:
+  #   container_name: golang
+  #   build: docker/golang
+  #   volumes:
+  #     - ./backend:/app:cached
+volumes:
+  nuxt_node_modules:
